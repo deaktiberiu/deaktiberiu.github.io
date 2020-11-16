@@ -1,61 +1,28 @@
 
 function hide(id) {
-    document.getElementById(id).style.display="none";
+    var el= document.getElementById(id);
+    if(el) {
+        el.style.display="none";
+    } else {
+        console.error ("elementul nu exista");
+    }
 }
 
-function showSkills () {
-    document.getElementById("home").style.display="none";
-    document.getElementById("languages").style.display="none";
-    document.getElementById("projects").style.display="none";
-    document.getElementById("skills").style.display="block";
+function hideAllPages() {
+    var pages = document.querySelectorAll(".page");
+
+    for(i=0;i<pages.length;i++){
+        var page=pages[i];
+        var id= page.id;
+        hide(id);
+    }
 }
 
-function showProjects () {
-    document.getElementById("home").style.display="none";
-    document.getElementById("languages").style.display="none";
-    document.getElementById("skills").style.display="none";
-    document.getElementById("projects").style.display="block";
+function showPage(pageId) {
+    hideAllPages();
+    document.getElementById(pageId).style.display="block";
+
 }
-
-function showLanguages () {
-     hide("home");
-     hide("skills");
-     hide("projects");
-    document.getElementById("languages").style.display="block";
-}
-
-function showHome () {
-     hide("languages");
-     hide("skills");
-     hide("projects");
-    document.getElementById("home").style.display="block";
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* var n=1;var lastPos=0;
 
 function showMe(n){
     console.log(n);
@@ -63,4 +30,4 @@ function showMe(n){
     document.getElementsByClassName("page")[n].style.display="block";
     document.getElementsByClassName("page")[lastPos].style.display="none";
     lastPos=n;
-}  */
+}  
