@@ -24,10 +24,15 @@ function showPage(pageId) {
 
 }
 
-function showMe(n){
-    console.log(n);
-    console.log(lastPos);
-    document.getElementsByClassName("page")[n].style.display="block";
-    document.getElementsByClassName("page")[lastPos].style.display="none";
-    lastPos=n;
-}  
+function initMeniu (){
+    document.addEventListener('click' , function (e) {
+        var link = e.target;
+        if (e.target.matches('#top-menu-bar a')){
+        var id= link.innerHTML.toLowerCase() ;
+        showPage(id);
+        }
+    });
+}
+
+
+initMeniu ();
