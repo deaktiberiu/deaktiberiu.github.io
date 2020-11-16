@@ -34,5 +34,13 @@ function initMeniu (){
     });
 }
 
-
 initMeniu ();
+
+showPage("skills")
+
+var skills=['html','css','js'];
+
+var ul= document.querySelector("#skills ul");
+for(i=0;i<skills.length;i++) {
+    ul.innerHTML =  ul.innerHTML + "<li>" + skills[i] + "</li>";
+    }
