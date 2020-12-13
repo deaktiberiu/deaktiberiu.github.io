@@ -2,85 +2,89 @@
 <html>
 
 <head>
-    <title>CV | DEAK TIBERIU testgit </title>
-    <link type="text/css" rel="stylesheet" href="style.css">
-   
+    <title>Deak Tiberiu CV</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
+
     <header>
-       <div>
-            <h1>CV</h1>
-            <img src="IMG_2088.PNG" width="100" alt="" />
-            <h2>Deak Tiberiu</h2>
-            <p id="jobTitle">Gestionar Depozit - <span>Silkeys&MachinesDistribution</span> </p>
-       </div>
-        
+        <div id="header-wraper">
+            <div id="my-picture">
+                <img src="IMG_2088.PNG" width="100" alt="">
+            </div>
+            <div id="header-info">
+                <h1>Deak Tiberiu</h1>
+                <h2 id="job-title">WebDeveloper </h2>
+            </div>
+        </div>
+
         <ul id="top-menu-bar">
-            <li><a href="#" >HOME</a></li>
-            <li><a href="#" >SKILLS</a></li>
-            <li><a href="#" >PROJECTS</a></li>
-            <li><a href="#" >LANGUAGES</a></li>
+            <li><a href="#" data-page="home">Home</a></li>
+            <li><a href="#" data-page="skills">Skills</a></li>
+            <li><a href="#" data-page="projects">Projects</a></li>
+            <li><a href="#" data-page="languages">Languages</a></li>
         </ul>
     </header>
-    <section id="content">  
+    <section id="content">
         <div id="side-menu">
-            <section> </section>    
             <section>
                 <form action="">
-                    <label for="email">E-mail</label>
-                    <input type="email" id="email" name="email" />
-                    <input type="button" value="submit">
+                    <label for="e">Email</label>
+                    <input type="email" id="e" name="em">
+                    <input type="text" id="name" name="nume" placeholder="Your name">
+                    <button>
+                        Contact Us
+                    </button>
                 </form>
             </section>
+            <section>...</section>
         </div>
-        <div id="main" >
-            <div  id="home" class="page" style="display: block;">
-                <h3>Home</h3>
-                <p>lorem ipsum dolores fructis    </p>                
+        <div id="main">
+            <div id="home" class="page" style="display: none;">
+                <h2>Home</h2>
+                unu doi trei patru cinci sase, ala bala portocala. Ana are mere si nu stie ce sa faca cu ele... daca ar stii s-ar imbogatii
             </div>
-            <div id="skills" class="page">   
-                <h3>Skills & Endorscements</h3>
 
+            <div id="skills" class="page" style="display: none;">
+                <h2>Skills & Endorcements</h2>
                 <ul>
-                   
+                    
                 </ul>
             </div>
-            <div id="projects"  class="page">
-                <h3>Projects</h3>
 
-                
+            <div id="projects" class="page" style="display: none;">
+                <h2>Projects</h2>
+                multe... iti zic dupa.
             </div>
-            <div id="languages" class="page">
-                <h3>Languages</h3>
-
+            
+            <div id="languages" class="page" style="display: none;">
+                <h2>Known Languages</h2>
                 <table border="1">
                     <tr>
-                        <td>Engleza</td>
-                        <td>Conversational</td>
+                        <td>Romanian</td>
+                        <td>nativ</td>
                     </tr>
                     <tr>
-                        <td>Romana</td>
-                        <td>Nativ</td>
+                        <td>English</td>
+                        <td>Conversational</td>
                     </tr>
                 </table>
             </div>
-           
-          
+
+
         </div>
     </section>
-
     <footer>
-        <a href="https://fasttrackit.org/">link</a>
+        <a href="" target="_blank">LinkedIn</a>
+        |
+        <a target="_blank" href="">Curs Web</a>
     </footer>
 
+    <script src="functions.js"></script>
     <script>
-        console.info ("salut")
-        var name = "Tiberiu";
-
-        console.info(name)
+      
     </script>
-     <script src="functions.js"></script>
 </body>
 
 </html>

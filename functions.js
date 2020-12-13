@@ -1,46 +1,55 @@
+var activePage = "skills";
 
 function hide(id) {
-    var el= document.getElementById(id);
-    if(el) {
-        el.style.display="none";
+    var el = document.getElementById(id);
+    if (el) {
+        el.style.display = "none";
     } else {
-        console.error ("elementul nu exista");
+        console.error("elementul nu exista");
     }
 }
 
-function hideAllPages() {
-    var pages = document.querySelectorAll(".page");
-
-    for(i=0;i<pages.length;i++){
-        var page=pages[i];
-        var id= page.id;
-        hide(id);
-    }
+function hidePreviousPage () {
+    hide(activePage);
+    var link = document.querySelector(`#top-menu-bar a[data-page="${activePage}"]`);
+    link.classList.remove("active");
 }
 
 function showPage(pageId) {
-    hideAllPages();
-    document.getElementById(pageId).style.display="block";
-
+    hidePreviousPage();
+    document.getElementById(pageId).style.display = "";
+    var link = document.querySelector(`#top-menu-bar a[data-page="${pageId}"]`);
+    link.classList.add("active");
+    activePage = pageId;
 }
 
-function initMeniu (){
-    document.addEventListener('click' , function (e) {
+function initMenu() {
+    document.addEventListener("click", function(e){
         var link = e.target;
-        if (e.target.matches('#top-menu-bar a')){
-        var id= link.innerHTML.toLowerCase() ;
-        showPage(id);
+        if (link.matches("#top-menu-bar a")) {
+            var id = link.getAttribute("data-page");
+            showPage(id);
         }
-    });
+    })
 }
 
-initMeniu ();
+initMenu();
 
-showPage("skills")
+showPage(activePage);
 
-var skills=['html','css','js'];
+function showSkills(skills) {
+    var skillsLi = skills.map(function(skill){
+        var endorsements = ` <span>&middot; ${skill.endorsements}</span>`;
+        return "<li>" + skill.name + endorsements + "</li>";
+    });
+    
+    // TODO add "favorite" skill
+    var ul = document.querySelector("#skills ul");
+    ul.innerHTML = skillsLi.join("");
+}
 
-var ul= document.querySelector("#skills ul");
-for(i=0;i<skills.length;i++) {
-    ul.innerHTML =  ul.innerHTML + "<li>" + skills[i] + "</li>";
-    }
+fetch("data/skills.json").then(function(r) {
+    return r.json();
+}).then(function(allSkills) {
+    showSkills(allSkills);
+});

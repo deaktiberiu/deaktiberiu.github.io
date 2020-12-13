@@ -2,53 +2,28 @@
 <html>
 
 <head>
-    <title></title>
-    <style>
-        header, footer {
-            padding: 4px; margin: 2px;
-            border: 2px solid blue;
-        }
-        #content div, #side-menu section {
-            padding: 4px; margin: 2px;
-            border: 2px solid red;
-        }
-        #side-menu section {
-            border: 2px solid green;
-        }      
-        html, body {
-            margin: 0; min-height: 100%;
-            display: flex; flex-direction: column;
-        }
-        header, body > section  { flex: 1; }
-        #content {
-            flex: 4;
-            display: flex; 
-            flex-direction: row;
-        }
-        #side-menu { flex: 1; }
-        #main { flex: 3; }
-        #footer {
-            max-height: 20px;
-        }              
-    </style>
+    <title>Layout</title>
+    <link rel="stylesheet" href="layout.css">
 </head>
 
 <body>
     <header>
         H
     </header>
-
     <section id="content">
         <div id="side-menu">
-            <section>M 1</section>
-            <section>M 2</section>
+            <section>
+                M1
+            </section>
+            <section>
+                M2
+            </section>
         </div>
         <div id="main">
-            Content
+            Center Center Center Center Center Center Center Center Center Center Center Center Center Center Center Center Center Center Center Center Center Center Center Center Center Center Center Center Center 
         </div>
     </section>
-
-    <footer id="footer" >
+    <footer>
         F
     </footer>
 </body>
